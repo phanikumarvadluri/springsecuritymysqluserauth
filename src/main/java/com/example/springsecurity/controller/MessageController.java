@@ -26,6 +26,12 @@ public class MessageController {
         return "hi";
     }
 
+    @GetMapping("/info")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String info() {
+        return "info";
+    }
+
     @GetMapping("/welcome")
     public String welcome() {
         return "welcome";
